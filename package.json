@@ -12,11 +12,11 @@
     "email": "info@rikjacobs.com",
     "url": "http://www.rikjacobs.com/"
   },
-  "devDependencies": {
-    "browser-sync": "*",
+  "dependencies": {
+    "browser-sync": "^2.18.13",
     "gulp": "*",
     "gulp-autoprefixer": "*",
-    "gulp-clean-css": "*",
+    "gulp-clean-css": "^3.9.0",
     "gulp-concat": "*",
     "gulp-header": "*",
     "gulp-imagemin": "*",

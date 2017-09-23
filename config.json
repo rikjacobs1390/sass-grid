@@ -16,7 +16,7 @@
     "img": "webroot/-sitedesign/img"
   },
   "server": {
-    "proxy": "http://localhost/sass-grid",
-    "port": 8000
+    "proxy": "http://localhost:8888/sass-grid",
+    "port": 8888
   }
 }
