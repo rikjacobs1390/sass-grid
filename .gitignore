@@ -1,2 +1,32 @@
+#----------------------------------------------------------------------------
+# MISC
+#----------------------------------------------------------------------------
+.*cache
+*.log
+cache/*
+
+# OS X Files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*.lnk
+*~
+
+# IDE FILES
+*.sublime-*
+*.tmproj
+
+# SASS
+*.sassc
 .sass-cache/
 *.css.map
+
+# NODE
+.node_modules
+node_modules
+*/node_modules
+/node_modules/*
+
+
+
