@@ -1,0 +1,22 @@
+{
+  "paths": {
+    "src": "src",
+    "dest": "webroot"
+  },
+  "src": {
+    "scripts": "src/scripts",
+    "styles": "src/styles",
+    "fonts": "src/fonts",
+    "img": "src/img"
+  },
+  "dest": {
+    "scripts": "webroot/-sitedesign/scripts",
+    "styles": "webroot/-sitedesign/styles",
+    "fonts": "webroot/-sitedesign/fonts",
+    "img": "webroot/-sitedesign/img"
+  },
+  "server": {
+    "proxy": "http://localhost/grid",
+    "port": 8000
+  }
+}

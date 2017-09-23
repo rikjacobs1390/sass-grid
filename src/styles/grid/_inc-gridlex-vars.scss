@@ -1,0 +1,80 @@
+//************************
+//    BREAKPOINTS
+//************************
+
+// Extra Extra small screen / phone
+$screen-xxs: 360px !default;
+
+// Extra small screen / phone
+$screen-xs: 480px !default;
+
+// Small screen / tablet
+$screen-sm: 768px !default;
+
+// Medium screen / desktop
+$screen-md: 1024px !default;
+
+// Large screen / wide desktop
+$screen-lg: 1200px !default;
+
+// ExtraLarge screen / ExtraWide desktop
+$screen-xl: 1600px !default;
+
+// So media queries don't overlap
+$screen-xxs-max: ($screen-xs - 1) !default;
+$screen-xs-max: ($screen-sm - 1) !default;
+$screen-sm-max: ($screen-md - 1) !default;
+$screen-md-max: ($screen-lg - 1) !default;
+$screen-lg-max: ($screen-xl - 1) !default;
+
+
+//************************
+//    VARIABLES
+//************************
+// container
+$gl-containerName: gridcontainer !default;
+$gl-gridcontainerAttributeName: class !default;
+$gl-gridcontainer-maxWidth: 1024px !default;
+// grid
+$gl-gridName: grid !default;
+// columns
+$gl-colName: col !default;
+$gl-attributeName: class !default;
+
+
+// GUTTER PER MEDIAQUERY
+$gl-gutter-xxs: 10px !default;
+$gl-gutter-xs: 20px !default;
+$gl-gutter-sm: 30px !default;
+$gl-gutter-md: 35px !default;
+$gl-gutter-lg: 40px !default;
+$gl-gutter-xl: 45px !default;
+
+
+// MEDIAQUERIES
+$gl-xxs: "screen and (max-width: #{$screen-xxs})" !default;
+$gl-xs: "screen and (max-width: #{$screen-xs})" !default;
+$gl-sm: "screen and (max-width: #{$screen-sm})" !default;
+$gl-md: "screen and (max-width: #{$screen-md})" !default;
+$gl-lg: "screen and (max-width: #{$screen-lg})" !default;
+$gl-xl: "screen and (max-width: #{$screen-xl})" !default;
+
+// COLS
+$glp_col-1: (100%/12);
+$glp_col-2: ($glp_col-1*2);
+$glp_col-3: ($glp_col-1*3);
+$glp_col-4: ($glp_col-1*4);
+$glp_col-5: ($glp_col-1*5);
+$glp_col-6: ($glp_col-1*6);
+$glp_col-7: ($glp_col-1*7);
+$glp_col-8: ($glp_col-1*8);
+$glp_col-9: ($glp_col-1*9);
+$glp_col-10: ($glp_col-1*10);
+$glp_col-11: ($glp_col-1*11);
+$glp_col-12: 100%;
+$glp_col-5-12: (100%/5);
+$glp_col-7-12: (100%/7);
+$glp_col-8-12: (100%/8);
+$glp_col-9-12: (100%/9);
+$glp_col-10-12: (100%/10);
+$glp_col-11-12: (100%/11);

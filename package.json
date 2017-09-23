@@ -1,0 +1,31 @@
+{
+  "name": "Grid",
+  "description": "Flexbox Grid",
+  "private": true,
+  "keywords": [
+    "Flexbox",
+    "Grid"
+  ],
+  "version": "1.0.0",
+  "author": {
+    "name": "Rik Jacobs",
+    "email": "info@rikjacobs.com",
+    "url": "http://www.rikjacobs.com/"
+  },
+  "devDependencies": {
+    "browser-sync": "*",
+    "gulp": "*",
+    "gulp-autoprefixer": "*",
+    "gulp-clean-css": "*",
+    "gulp-concat": "*",
+    "gulp-header": "*",
+    "gulp-imagemin": "*",
+    "gulp-jshint": "*",
+    "gulp-notify": "*",
+    "gulp-plumber": "*",
+    "gulp-rename": "*",
+    "gulp-sass": "*",
+    "gulp-uglify": "*",
+    "jshint": "*"
+  }
+}

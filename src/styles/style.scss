@@ -1,0 +1,71 @@
+@import "general-styles/_inc-variables.scss";
+@import "general-styles/_inc-reset.scss";
+@import "general-styles/_inc-base.scss";
+
+@import "grid/_inc-gridlex.scss";
+
+
+
+header,
+footer {
+	background-color: #333;
+	padding: 20px;
+	text-align: center;
+	color: white;
+}
+
+
+
+#main {
+	position: relative;
+	width: 100%;
+	background-color: #ffffff;
+	// @media (min-width: $screen-xxs) {
+	// 	background-color: Wheat;
+	// }
+	// @media (min-width: $screen-xs) {
+	// 	background-color: lightblue;
+	// }
+	// @media (min-width: $screen-sm) {
+	// 	background-color: SandyBrown;
+	// }
+	// @media (min-width: $screen-md) {
+	// 	background-color: pink;
+	// }
+	// @media (min-width: $screen-lg) {
+	// 	background-color: MediumAquaMarine;
+	// }
+	// @media (min-width: $screen-xl) {
+	// 	background-color: WhiteSmoke;
+	// }
+
+	padding: 0px;
+}
+
+.box {
+	position: relative;
+	width: 100%;
+	display: block;
+	overflow: hidden;
+    min-height: 1rem;
+    background: red;
+    border: 1px solid #FFF;
+    border-radius: 10px;
+    text-align: center;
+    color: #fff;
+    // word-break: break-all;
+    margin-bottom: 30px;
+    padding: 10px
+}
+
+html,
+body {
+	font-family: arial;
+}
+h1 {
+	display: block;
+	text-align: center;
+	font-size: 30px;
+	margin-top:: 10px;
+	margin-bottom: 30px;
+}

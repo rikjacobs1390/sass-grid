@@ -1,0 +1,384 @@
+/* ==========================================================================
+	GRIDLEX
+	Just a Flexbox Grid System.
+	http://gridlex.devlint.fr/
+
+	Modified by Rik Jacobs : 28-06-2017
+
+
+
+	@RIK: TODO: 
+		- create gutter per breakpoint
+
+========================================================================== */
+
+@import "_inc-gridlex-vars";
+@import "_inc-gridlex-mixins";
+@import "_inc-gridlex-responsiveutilities.scss";
+
+
+// GRID CONTAINER
+[#{$gl-gridcontainerAttributeName}~="#{$gl-containerName}"],
+[#{$gl-gridcontainerAttributeName}*="#{$gl-containerName}-"],
+[#{$gl-gridcontainerAttributeName}*="#{$gl-containerName}_"] {
+	padding: 0 ($gl-gutter-xl);
+	@media #{$gl-xl} {
+		padding: 0 ($gl-gutter-xl);
+	}
+	@media #{$gl-lg} {
+		padding: 0 ($gl-gutter-lg);
+	}
+	@media #{$gl-md} {
+		padding: 0 ($gl-gutter-md);
+	}
+	@media #{$gl-sm} {
+		padding: 0 ($gl-gutter-sm);
+	}
+	@media #{$gl-xs} {
+		padding: 0 ($gl-gutter-xs);
+	}
+	@media #{$gl-xxs} {
+		padding: 0 ($gl-gutter-xxs);
+	}
+}
+
+// GRID
+[#{$gl-attributeName}~="#{$gl-gridName}"],
+[#{$gl-attributeName}*="#{$gl-gridName}-"],
+[#{$gl-attributeName}*="#{$gl-gridName}_"] {
+	box-sizing: border-box;
+	display: flex;
+	flex-flow: row wrap;
+	margin: 0 (-$gl-gutter-xl/2);
+	@media #{$gl-xl} {
+		margin: 0 (-$gl-gutter-xl/2);
+	}
+	@media #{$gl-lg} {
+		margin: 0 (-$gl-gutter-lg/2);
+	}
+	@media #{$gl-md} {
+		margin: 0 (-$gl-gutter-md/2);
+	}
+	@media #{$gl-sm} {
+		margin: 0 (-$gl-gutter-sm/2);
+	}
+	@media #{$gl-xs} {
+		margin: 0 (-$gl-gutter-xs/2);
+	}
+	@media #{$gl-xxs} {
+		margin: 0 (-$gl-gutter-xxs/2);
+	}
+}
+
+// COLS
+[#{$gl-attributeName}~="#{$gl-colName}"],
+[#{$gl-attributeName}*="#{$gl-colName}-"],
+[#{$gl-attributeName}*="#{$gl-colName}_"] {
+	padding: 0 ($gl-gutter-xl/2);
+	@media #{$gl-xl} {
+		padding: 0 ($gl-gutter-xl/2);
+	}
+	@media #{$gl-lg} {
+		padding: 0 ($gl-gutter-lg/2);
+	}
+	@media #{$gl-md} {
+		padding: 0 ($gl-gutter-md/2);
+	}
+	@media #{$gl-sm} {
+		padding: 0 ($gl-gutter-sm/2);
+	}
+	@media #{$gl-xs} {
+		padding: 0 ($gl-gutter-xs/2);
+	}
+	@media #{$gl-xxs} {
+		padding: 0 ($gl-gutter-xxs/2);
+	}
+	
+}
+
+// JUST "COL"
+[#{$gl-attributeName}~="#{$gl-colName}"] {
+	flex: 0 0 auto;
+}
+
+// JUST "COL-" & "COL_"
+[#{$gl-attributeName}~="#{$gl-colName}"],
+[#{$gl-attributeName}*="#{$gl-colName}_"] {
+	flex: 1 1 0%;
+}
+
+// COL & GRID
+[#{$gl-attributeName}~="#{$gl-gridName}"][#{$gl-attributeName}~="#{$gl-colName}"],
+[#{$gl-attributeName}~="#{$gl-gridName}"][#{$gl-attributeName}*="#{$gl-colName}-"],
+[#{$gl-attributeName}~="#{$gl-gridName}"][#{$gl-attributeName}*="#{$gl-colName}_"] {
+	margin: 0;
+	padding: 0;
+}
+
+
+/************************
+	HELPERS SUFFIXES
+*************************/
+
+// FOR GRIDCONTAINER
+[#{$gl-gridcontainerAttributeName}~="#{$gl-containerName}"],
+[#{$gl-gridcontainerAttributeName}*="#{$gl-containerName}-"],
+[#{$gl-gridcontainerAttributeName}*="#{$gl-containerName}_"] {
+
+	// container with no padding on the sides
+	&[#{$gl-gridcontainerAttributeName}*="-noPadding"] {
+		padding: 0 0;
+		overflow-x: hidden;
+	}
+	
+	// maxwidth container (centered)
+	&[#{$gl-gridcontainerAttributeName}*="-maxWidth"] {
+		max-width: $gl-gridcontainer-maxWidth;
+		margin: 0 auto;
+	}
+}
+
+
+
+
+// FOR GRID
+[#{$gl-attributeName}*="#{$gl-gridName}-"] {
+	// No spacing between cols : noGutter
+	&[#{$gl-attributeName}*="-noGutter"] {
+		margin: 0;
+		> [#{$gl-attributeName}~="#{$gl-colName}"],
+		> [#{$gl-attributeName}*="#{$gl-colName}-"] {
+			padding: 0;
+		}
+	}
+	// No Wrapping
+	&[#{$gl-attributeName}*="-noWrap"] {
+		flex-wrap: nowrap;
+	}
+	// Horizontal alignment on center
+	&[#{$gl-attributeName}*="-center"] {
+		justify-content: center;
+	}
+	// Horizontal alignment on right
+	&[#{$gl-attributeName}*="-right"] {
+		justify-content: flex-end;
+		align-self: flex-end;
+		margin-left: auto;
+	}
+	// Vertical alignment on top
+	&[#{$gl-attributeName}*="-top"] {
+		align-items: flex-start;
+	}
+	// Vertical alignment on middle
+	&[#{$gl-attributeName}*="-middle"] {
+		align-items: center;
+	}
+	// Vertical alignment on bottom
+	&[#{$gl-attributeName}*="-bottom"] {
+		align-items: flex-end;
+	}
+	// Orders
+	&[#{$gl-attributeName}*="-reverse"] {
+		flex-direction: row-reverse;
+	}
+	&[#{$gl-attributeName}*="-column"] {
+		flex-direction: column;
+		> [#{$gl-attributeName}*="#{$gl-colName}-"] {
+			flex-basis: auto;
+		}
+	}
+	&[#{$gl-attributeName}*="-column-reverse"] {
+		flex-direction: column-reverse;
+	}
+	// Spaces between and around cols
+	&[#{$gl-attributeName}*="-spaceBetween"] {
+		justify-content: space-between;
+	}
+	&[#{$gl-attributeName}*="-spaceAround"] {
+		justify-content: space-around;
+	}
+	// Equal heights columns
+	&[#{$gl-attributeName}*="-equalHeight"] > [#{$gl-attributeName}~="#{$gl-colName}"],
+	&[#{$gl-attributeName}*="-equalHeight"] > [#{$gl-attributeName}*="#{$gl-colName}-"],
+	&[#{$gl-attributeName}*="-equalHeight"] > [#{$gl-attributeName}*="#{$gl-colName}_"] {
+		display: flex;
+		flex-wrap: wrap;
+		> * {
+			flex: 1 0 100%;
+		}
+	}
+}
+
+// FOR COL
+[#{$gl-attributeName}*="#{$gl-colName}-"] {
+	&[#{$gl-attributeName}*="-top"] {
+		align-self: flex-start;
+	}
+	&[#{$gl-attributeName}*="-middle"] {
+		align-self: center;
+	}
+	&[#{$gl-attributeName}*="-bottom"] {
+		align-self: flex-end;
+	}
+	&[#{$gl-attributeName}*="-first"] {
+		order: -1;
+	}
+	&[#{$gl-attributeName}*="-last"] {
+		order: 1;
+	}
+}
+
+
+/************************
+	GRID BY NUMBER
+*************************/
+
+@include makeGridByNumber(#{$gl-gridName});
+@media #{$gl-lg} {
+	@include makeGridByNumber(_lg);
+}
+
+@media #{$gl-md} {
+	@include makeGridByNumber(_md);
+}
+
+@media #{$gl-sm} {
+	@include makeGridByNumber(_sm);
+}
+
+@media #{$gl-xs} {
+	@include makeGridByNumber(_xs);
+}
+
+@media #{$gl-xxs} {
+	@include makeGridByNumber(_xxs);
+}
+
+
+/************************
+	COLS SIZES
+*************************/
+
+@include makeCol(#{$gl-colName});
+@include makeOff(off);
+@media #{$gl-lg} {
+	@include makeCol(_lg);
+	@include makeOff(_lg);
+	@include makeFirstLast(_lg);
+}
+
+@media #{$gl-md} {
+	@include makeCol(_md);
+	@include makeOff(_md);
+	@include makeFirstLast(_md);
+}
+
+@media #{$gl-sm} {
+	@include makeCol(_sm);
+	@include makeOff(_sm);
+	@include makeFirstLast(_sm);
+}
+
+@media #{$gl-xs} {
+	@include makeCol(_xs);
+	@include makeOff(_xs);
+	@include makeFirstLast(_xs);
+}
+
+@media #{$gl-xxs} {
+	@include makeCol(_xxs);
+	@include makeOff(_xxs);
+	@include makeFirstLast(_xxs);
+}
+
+
+/************************
+	HIDING COLS
+*************************/
+
+[#{$gl-attributeName}*="#{$gl-colName}-"]:not([#{$gl-attributeName}*="#{$gl-colName}-0"]) {
+	display: block;
+}
+
+[#{$gl-attributeName}~="#{$gl-gridName}"][#{$gl-attributeName}*="#{$gl-colName}-"]:not([#{$gl-attributeName}*="#{$gl-colName}-0"]) {
+	display: flex;
+}
+
+[#{$gl-attributeName}*="#{$gl-colName}-"][#{$gl-attributeName}*="#{$gl-colName}-0"] {
+	display: none;
+}
+
+@media #{$gl-lg} {
+	[#{$gl-attributeName}~="#{$gl-gridName}"] {
+		>:not([#{$gl-attributeName}*="_lg-0"]) {
+			display: block;
+		}
+		&:not([#{$gl-attributeName}*="_lg-0"]) {
+			display: flex;
+		}
+		>[#{$gl-attributeName}*="_lg-0"],
+		&[#{$gl-attributeName}*="-equalHeight"] > [#{$gl-attributeName}*="_lg-0"] {
+			display: none;
+		}
+	}
+}
+
+@media #{$gl-md} {
+	[#{$gl-attributeName}~="#{$gl-gridName}"] {
+		>:not([#{$gl-attributeName}*="_md-0"]) {
+			display: block;
+		}
+		&:not([#{$gl-attributeName}*="_md-0"]) {
+			display: flex;
+		}
+		>[#{$gl-attributeName}*="_md-0"],
+		&[#{$gl-attributeName}*="-equalHeight"] > [#{$gl-attributeName}*="_md-0"] {
+			display: none;
+		}
+	}
+}
+
+@media #{$gl-sm} {
+	[#{$gl-attributeName}~="#{$gl-gridName}"] {
+		>:not([#{$gl-attributeName}*="_sm-0"]) {
+			display: block;
+		}
+		&:not([#{$gl-attributeName}*="_sm-0"]) {
+			display: flex;
+		}
+		>[#{$gl-attributeName}*="_sm-0"],
+		&[#{$gl-attributeName}*="-equalHeight"] > [#{$gl-attributeName}*="_sm-0"] {
+			display: none;
+		}
+	}
+}
+
+@media #{$gl-xs} {
+	[#{$gl-attributeName}~="#{$gl-gridName}"] {
+		>:not([#{$gl-attributeName}*="_xs-0"]) {
+			display: block;
+		}
+		&:not([#{$gl-attributeName}*="_xs-0"]) {
+			display: flex;
+		}
+		>[#{$gl-attributeName}*="_xs-0"],
+		&[#{$gl-attributeName}*="-equalHeight"] > [#{$gl-attributeName}*="_xs-0"] {
+			display: none;
+		}
+	}
+}
+
+@media #{$gl-xxs} {
+	[#{$gl-attributeName}~="#{$gl-gridName}"] {
+		>:not([#{$gl-attributeName}*="_xxs-0"]) {
+			display: block;
+		}
+		&:not([#{$gl-attributeName}*="_xxs-0"]) {
+			display: flex;
+		}
+		>[#{$gl-attributeName}*="_xxs-0"],
+		&[#{$gl-attributeName}*="-equalHeight"] > [#{$gl-attributeName}*="_xxs-0"] {
+			display: none;
+		}
+	}
+}

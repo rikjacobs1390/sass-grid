@@ -1,0 +1,133 @@
+@charset 'UTF-8';
+
+
+
+
+/* =============================================================================
+   Base
+   ========================================================================== */
+
+/*
+ * The default box-model is set to “content-box” which means it does not include padding and borders into the width value.
+ * The default box-sizing would make the width be 100% plus the padding but using border-box would include the padding in the width.
+ */
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+/*
+ * tap highlight colors
+ */
+* {
+    -webkit-border-radius: 0;
+    outline: none; 
+
+    -webkit-tap-highlight-color: rgba(255,255,255,0);
+    -webkit-touch-callout: none;
+    -webkit-appearance: none;
+}
+
+
+/*
+ * Remove text-shadow in selection highlight: h5bp.com/i
+ * These selection declarations have to be separate
+ * Also: hot pink! (or customize the background color to match your design)
+ */
+::selection {
+    color: white;
+    background: $brand-primary;
+}
+::-moz-selection {
+    color: white;
+    background: $brand-primary;
+}
+
+
+/*
+ * Remove the gap between images, videos, audio and canvas and the bottom of
+ * their containers: h5bp.com/i/440
+ */
+audio,
+canvas,
+img,
+video {
+    vertical-align: middle;
+}
+
+
+
+
+
+
+/* =============================================================================
+   Links
+   ========================================================================== */
+a {
+    cursor: pointer;
+}
+a:focus {
+    outline: 0;
+}
+
+/* Improve readability when focused and hovered in all browsers: h5bp.com/h */
+a:hover,
+a:active {
+    outline: 0;
+}
+
+
+/* Added to get rid of the grey background on link press in IE10 */
+a:hover,
+a:active {
+    outline: 0;
+}
+a:link {
+    background-color: transparent;
+}
+a:visited {
+    background-color: transparent;
+}
+a:hover {
+    background-color: transparent;
+}
+a:active {
+    background-color: transparent;
+}
+
+a[href^=tel] {
+    color: inherit;
+}
+
+
+
+
+
+
+/* =============================================================================
+   Embedded content
+   ========================================================================== */
+
+/*
+ * 1. Improve image quality when scaled in IE7: h5bp.com/d
+ * 2. Remove the gap between images and borders on image containers: h5bp.com/i/440
+ */
+img {
+    max-width: 100%;
+    height: auto; 
+
+    vertical-align: middle;
+
+    -ms-interpolation-mode: bicubic;
+    border: 0;
+}
+
+/*
+ * Correct overflow not hidden in IE9
+ */
+svg:not(:root) {
+    overflow: hidden;
+}
